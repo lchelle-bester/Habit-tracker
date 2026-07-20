@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useAppStore } from '../../state/store'
-import { today as todayFn } from '../../engine/dates'
+import { addDays, today as todayFn } from '../../engine/dates'
 import { goalsScheduledOn } from '../../engine/selectors'
 import { evaluatePushbackFlags } from '../../engine/pushback'
 import { GoalRow } from './GoalRow'
@@ -39,12 +39,17 @@ export function TodayView() {
 
       <div className="goal-list">
         {scheduledGoals.length === 0 && <p className="today-view__empty">Nothing scheduled today.</p>}
-        {scheduledGoals.map((goal, i) => (
-          <div key={goal.id} className="goal-list__item" style={{ animationDelay: `${i * 35}ms` }}>
-            {i > 0 && <Rule />}
-            <GoalRow goal={goal} entry={entryByGoal.get(`${goal.id}|${date}`)} date={date} />
-          </div>
-        ))}
+        {scheduledGoals.map((goal, i) => {
+          // Bedtime can only ever be logged the morning after — "today's" Sleep
+          // row is really about last night, so it reads/writes yesterday's date.
+          const entryDate = goal.type === 'daily_time' ? addDays(date, -1) : date
+          return (
+            <div key={goal.id} className="goal-list__item" style={{ animationDelay: `${i * 35}ms` }}>
+              {i > 0 && <Rule />}
+              <GoalRow goal={goal} entry={entryByGoal.get(`${goal.id}|${entryDate}`)} date={entryDate} />
+            </div>
+          )
+        })}
       </div>
 
       <PushbackBanner flag={flag} />

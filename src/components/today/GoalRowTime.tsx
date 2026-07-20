@@ -42,7 +42,7 @@ export function GoalRowTime({ goal, entry, date }: { goal: Goal & { type: 'daily
               {e.actualTime} · {delta != null ? formatDelta(delta) : ''}
             </TabularNumber>
           ) : (
-            <span className="goal-row__prompt">Log bedtime — target {targetTime ?? '—'}</span>
+            <span className="goal-row__prompt">Log last night's bedtime — target {targetTime ?? '—'}</span>
           )}
         </div>
       </button>

@@ -102,7 +102,7 @@
 }
 
 .correlation-stat__number {
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   font-weight: var(--weight-bold);
   letter-spacing: -0.03em;
   color: var(--accent);
@@ -144,9 +144,9 @@
 }
 
 .streak-list__numbers b {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: var(--weight-bold);
-  color: var(--ink);
+  color: var(--accent);
   margin-right: var(--space-1);
   letter-spacing: -0.02em;
 }
