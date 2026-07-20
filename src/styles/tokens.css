@@ -1,0 +1,117 @@
+:root {
+  /* Light — warm off-white, near-black ink, one restrained terracotta accent. */
+  --bg: #f6f3ec;
+  --surface: #efeade;
+  --ink: #18150f;
+  --ink-80: rgba(24, 21, 15, 0.8);
+  --ink-70: rgba(24, 21, 15, 0.68);
+  --ink-55: rgba(24, 21, 15, 0.52);
+  --ink-32: rgba(24, 21, 15, 0.3);
+  --ink-15: rgba(24, 21, 15, 0.08);
+  --rule: rgba(24, 21, 15, 0.13);
+  --rule-strong: rgba(24, 21, 15, 0.26);
+  --accent: #af4f2e;
+  --accent-ink: #faf4ec;
+  --accent-soft: rgba(175, 79, 46, 0.12);
+  --accent-soft-strong: rgba(175, 79, 46, 0.22);
+  --shadow-1: 0 1px 2px rgba(24, 21, 15, 0.06), 0 6px 20px -8px rgba(24, 21, 15, 0.18);
+
+  --font-sans: 'Inter Tight Variable', 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --text-micro: 0.6875rem;
+  --text-small: 0.8125rem;
+  --text-body: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.75rem;
+  --text-3xl: 3.75rem;
+
+  --weight-light: 380;
+  --weight-regular: 440;
+  --weight-medium: 560;
+  --weight-semibold: 660;
+  --weight-bold: 760;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --duration-fast: 140ms;
+  --duration-base: 260ms;
+  --duration-slow: 460ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark — warm dark grey, designed independently, never pure black or a naive invert. */
+    --bg: #1c1a16;
+    --surface: #242019;
+    --ink: #efe9dd;
+    --ink-80: rgba(239, 233, 221, 0.8);
+    --ink-70: rgba(239, 233, 221, 0.68);
+    --ink-55: rgba(239, 233, 221, 0.52);
+    --ink-32: rgba(239, 233, 221, 0.3);
+    --ink-15: rgba(239, 233, 221, 0.09);
+    --rule: rgba(239, 233, 221, 0.14);
+    --rule-strong: rgba(239, 233, 221, 0.28);
+    --accent: #e08653;
+    --accent-ink: #1c1a16;
+    --accent-soft: rgba(224, 134, 83, 0.16);
+    --accent-soft-strong: rgba(224, 134, 83, 0.28);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -10px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+/* Manual override always wins over the OS preference — higher specificity than the bare :root above. */
+:root[data-theme='light'] {
+  --bg: #f6f3ec;
+  --surface: #efeade;
+  --ink: #18150f;
+  --ink-80: rgba(24, 21, 15, 0.8);
+  --ink-70: rgba(24, 21, 15, 0.68);
+  --ink-55: rgba(24, 21, 15, 0.52);
+  --ink-32: rgba(24, 21, 15, 0.3);
+  --ink-15: rgba(24, 21, 15, 0.08);
+  --rule: rgba(24, 21, 15, 0.13);
+  --rule-strong: rgba(24, 21, 15, 0.26);
+  --accent: #af4f2e;
+  --accent-ink: #faf4ec;
+  --accent-soft: rgba(175, 79, 46, 0.12);
+  --accent-soft-strong: rgba(175, 79, 46, 0.22);
+  --shadow-1: 0 1px 2px rgba(24, 21, 15, 0.06), 0 6px 20px -8px rgba(24, 21, 15, 0.18);
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #1c1a16;
+  --surface: #242019;
+  --ink: #efe9dd;
+  --ink-80: rgba(239, 233, 221, 0.8);
+  --ink-70: rgba(239, 233, 221, 0.68);
+  --ink-55: rgba(239, 233, 221, 0.52);
+  --ink-32: rgba(239, 233, 221, 0.3);
+  --ink-15: rgba(239, 233, 221, 0.09);
+  --rule: rgba(239, 233, 221, 0.14);
+  --rule-strong: rgba(239, 233, 221, 0.28);
+  --accent: #e08653;
+  --accent-ink: #1c1a16;
+  --accent-soft: rgba(224, 134, 83, 0.16);
+  --accent-soft-strong: rgba(224, 134, 83, 0.28);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -10px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}

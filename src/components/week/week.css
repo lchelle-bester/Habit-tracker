@@ -1,0 +1,115 @@
+.week-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.week-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  font-size: var(--text-small);
+}
+
+.week-nav button {
+  color: var(--ink-70);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--weight-medium);
+  font-size: var(--text-micro);
+  padding: var(--space-2) var(--space-1);
+  transition: color var(--duration-base) var(--ease), opacity var(--duration-base) var(--ease);
+}
+.week-nav button:hover:not(:disabled) {
+  color: var(--accent);
+}
+.week-nav button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.week-nav__label {
+  font-weight: var(--weight-semibold);
+  color: var(--ink-80);
+}
+
+.week-row {
+  display: grid;
+  grid-template-columns: minmax(72px, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.week-row--header {
+  border-top: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: var(--space-3);
+}
+
+.week-row__name {
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  padding-right: var(--space-2);
+}
+
+.week-row__cells {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(26px, 1fr));
+  gap: 2px;
+  text-align: center;
+}
+
+.week-cell {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.week-cell--header {
+  flex-direction: column;
+  height: auto;
+  font-size: var(--text-micro);
+  color: var(--ink-55);
+  gap: 3px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: var(--space-1);
+}
+
+.week-cell--today {
+  color: var(--accent);
+  font-weight: var(--weight-bold);
+}
+
+.week-mark {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transition: transform var(--duration-base) var(--ease);
+}
+
+.week-mark--pass {
+  background: var(--accent);
+}
+
+.week-mark--fail {
+  width: 5px;
+  height: 5px;
+  background: var(--ink-32);
+}
+
+.week-mark--pending {
+  width: 9px;
+  height: 9px;
+  background: transparent;
+  border: 1.5px solid var(--ink-15);
+}
+
+.week-mark--not_scheduled {
+  background: transparent;
+}

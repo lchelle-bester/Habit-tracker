@@ -1,0 +1,119 @@
+.ui-button {
+  position: relative;
+  font-family: inherit;
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  transition: transform var(--duration-fast) var(--ease), border-color var(--duration-base) var(--ease), background-color var(--duration-base) var(--ease), color var(--duration-base) var(--ease);
+}
+.ui-button:hover {
+  border-color: var(--ink-70);
+}
+.ui-button:active {
+  transform: scale(0.96);
+}
+.ui-button--primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-1);
+}
+.ui-button--primary:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.ui-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+  transform: none;
+}
+
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.ui-field label {
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-55);
+}
+.ui-field input,
+.ui-field select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding: var(--space-2) 0;
+  font-size: var(--text-body);
+  color: var(--ink);
+  transition: border-color var(--duration-base) var(--ease);
+}
+.ui-field input:hover,
+.ui-field select:hover {
+  border-bottom-color: var(--ink-70);
+}
+.ui-field input:focus,
+.ui-field select:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+  border-bottom-width: 2px;
+  padding-bottom: calc(var(--space-2) - 1px);
+}
+
+.ui-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--ink-55);
+  padding: var(--space-1) 0;
+  transition: color var(--duration-base) var(--ease);
+}
+.ui-toggle--on {
+  color: var(--ink);
+  font-weight: var(--weight-semibold);
+}
+
+.ui-toggle-ring {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink-32);
+  transition: border-color var(--duration-base) var(--ease);
+}
+.ui-toggle-ring::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: scale(0);
+  transition: transform var(--duration-base) var(--ease);
+}
+.ui-toggle--on .ui-toggle-ring {
+  border-color: var(--accent);
+}
+.ui-toggle--on .ui-toggle-ring::after {
+  transform: scale(1);
+}
+.ui-toggle:active .ui-toggle-ring {
+  transform: scale(0.88);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-button, .ui-field input, .ui-field select, .ui-toggle, .ui-toggle-ring, .ui-toggle-ring::after {
+    transition: none;
+  }
+}
