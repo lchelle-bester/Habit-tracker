@@ -1,0 +1,43 @@
+:root {
+  --bg: #f6f4ef;
+  --bg-raised: #efece4;
+  --ink: #17150f;
+  --ink-soft: rgba(23, 21, 15, 0.62);
+  --ink-faint: rgba(23, 21, 15, 0.34);
+  --hairline: rgba(23, 21, 15, 0.16);
+  --hairline-strong: rgba(23, 21, 15, 0.3);
+  --accent: #a8531f;
+  --accent-soft: rgba(168, 83, 31, 0.16);
+  --fail-ink: rgba(23, 21, 15, 0.88);
+
+  --font-sans: 'Inter Tight', 'Söhne', -apple-system, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --radius: 2px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #201e1a;
+    --bg-raised: #29261f;
+    --ink: #ece7db;
+    --ink-soft: rgba(236, 231, 219, 0.66);
+    --ink-faint: rgba(236, 231, 219, 0.36);
+    --hairline: rgba(236, 231, 219, 0.16);
+    --hairline-strong: rgba(236, 231, 219, 0.28);
+    --accent: #d98a4e;
+    --accent-soft: rgba(217, 138, 78, 0.18);
+    --fail-ink: rgba(236, 231, 219, 0.92);
+    color-scheme: dark;
+  }
+}
