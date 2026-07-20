@@ -1,0 +1,122 @@
+.week-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.week-range {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.week-grid {
+  display: grid;
+  font-size: 0.78rem;
+  border-top: 1px solid var(--rule);
+}
+
+.week-head-cell {
+  padding: 6px 2px 10px;
+  text-align: center;
+}
+
+.week-head-cell:first-child {
+  text-align: left;
+}
+
+.week-head-today .label,
+.week-head-today .week-head-date {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.week-head-date {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+.week-row-name {
+  padding: 12px 6px 12px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-top: 1px solid var(--rule);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.week-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.week-summary {
+  font-weight: 600;
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  justify-content: flex-end;
+  padding-right: 2px;
+}
+
+.wk-mark {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.wk-mark-pass {
+  background: var(--text);
+  opacity: 1;
+}
+
+.wk-mark-pass-dim {
+  background: var(--text);
+  opacity: 0.5;
+}
+
+.wk-mark-floor {
+  background: var(--accent);
+  opacity: 1;
+}
+
+.wk-mark-fail {
+  background: var(--text);
+  opacity: 0.16;
+}
+
+.wk-mark-pending {
+  background: transparent;
+  opacity: 1;
+  border: 1px solid var(--rule-strong);
+  width: 6px;
+  height: 6px;
+}
+
+.wk-mark-empty {
+  background: none;
+  width: 4px;
+  height: 1px;
+  border-radius: 0;
+  background: var(--rule);
+}
+
+.week-legend {
+  margin-top: 20px;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.week-legend .wk-mark {
+  margin-right: 2px;
+}

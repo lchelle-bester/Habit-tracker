@@ -1,0 +1,121 @@
+.settings-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.settings-heading-spaced {
+  margin-top: 40px;
+}
+
+.settings-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.settings-list {
+  border-top: 1px solid var(--rule);
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.settings-row-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.settings-row-sub {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.settings-row-actions {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 420px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-input {
+  font-size: 0.95rem;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid var(--rule-strong);
+  background: transparent;
+  color: var(--text);
+}
+
+.form-input-narrow {
+  width: 120px;
+}
+
+.form-static {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.form-hint {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.weekday-picker {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.weekday-chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border: 1px solid var(--rule-strong);
+  color: var(--text-faint);
+}
+
+.weekday-chip-on {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.override-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.override-day {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  width: 40px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 8px;
+}

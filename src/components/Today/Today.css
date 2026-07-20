@@ -1,0 +1,137 @@
+.flag-banner {
+  border-left: 2px solid var(--accent);
+  padding-left: 14px;
+  margin-bottom: 28px;
+}
+
+.flag-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.today-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.today-empty {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  padding: 24px 0;
+}
+
+.goal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+}
+
+.goal-row-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.goal-row-sub {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.goal-row-control {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-toggle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  border: 1px solid var(--rule-strong);
+  color: var(--text-dim);
+  white-space: nowrap;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+
+.control-toggle-on {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.control-chip {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 14px;
+  border: 1px solid var(--rule-strong);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.control-text {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.control-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px dotted var(--rule-strong);
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+
+.control-delta {
+  font-weight: 500;
+  color: var(--text-dim);
+  font-size: 0.85em;
+}
+
+.control-delta-late {
+  color: var(--accent);
+}
+
+.control-input {
+  font-size: 0.92rem;
+  font-weight: 600;
+  border: none;
+  border-bottom: 1px solid var(--text);
+  background: transparent;
+  width: 64px;
+  padding: 2px 0;
+}
+
+.verse-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.verse-text {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.verse-ref {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}

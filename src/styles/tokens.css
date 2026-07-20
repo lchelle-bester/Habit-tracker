@@ -1,0 +1,52 @@
+:root {
+  --bg: #f5f2ea;
+  --text: #18150f;
+  --text-dim: rgba(24, 21, 15, 0.58);
+  --text-faint: rgba(24, 21, 15, 0.34);
+  --accent: #9a5a2e;
+  --accent-dim: rgba(154, 90, 46, 0.5);
+  --rule: rgba(24, 21, 15, 0.14);
+  --rule-strong: rgba(24, 21, 15, 0.32);
+  --focus: rgba(154, 90, 46, 0.55);
+
+  --font-ui: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #1d1a15;
+  --text: #ece6d8;
+  --text-dim: rgba(236, 230, 216, 0.62);
+  --text-faint: rgba(236, 230, 216, 0.36);
+  --accent: #e0975c;
+  --accent-dim: rgba(224, 151, 92, 0.5);
+  --rule: rgba(236, 230, 216, 0.16);
+  --rule-strong: rgba(236, 230, 216, 0.34);
+  --focus: rgba(224, 151, 92, 0.6);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #1d1a15;
+    --text: #ece6d8;
+    --text-dim: rgba(236, 230, 216, 0.62);
+    --text-faint: rgba(236, 230, 216, 0.36);
+    --accent: #e0975c;
+    --accent-dim: rgba(224, 151, 92, 0.5);
+    --rule: rgba(236, 230, 216, 0.16);
+    --rule-strong: rgba(236, 230, 216, 0.34);
+    --focus: rgba(224, 151, 92, 0.6);
+    color-scheme: dark;
+  }
+}
