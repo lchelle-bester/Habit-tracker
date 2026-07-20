@@ -17,19 +17,6 @@ function weeklyTypeCellStatus(entry: Entry | undefined, date: ISODate, todayDate
   return 'fail'
 }
 
-function cellMark(status: DayStatus): string {
-  switch (status) {
-    case 'pass':
-      return '—'
-    case 'fail':
-      return '·'
-    case 'pending':
-      return '·'
-    case 'not_scheduled':
-      return ''
-  }
-}
-
 function GoalWeekRow({ goal, weekDates, entryByDate, todayDate }: { goal: Goal; weekDates: ISODate[]; entryByDate: Map<string, Entry>; todayDate: ISODate }) {
   return (
     <div className="week-row">
@@ -44,8 +31,8 @@ function GoalWeekRow({ goal, weekDates, entryByDate, todayDate }: { goal: Goal; 
                 : ('not_scheduled' as DayStatus)
               : evaluateDay(goal, entry, date, todayDate)
           return (
-            <div key={date} className={`week-cell week-cell--${status}`} title={`${goal.name} · ${date}`}>
-              {cellMark(status)}
+            <div key={date} className="week-cell" title={`${goal.name} · ${date}`}>
+              <span className={`week-mark week-mark--${status}`} />
             </div>
           )
         })}

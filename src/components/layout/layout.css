@@ -9,8 +9,8 @@
 
 .app-main {
   flex: 1;
-  padding: var(--space-6) var(--space-5) var(--space-8);
-  padding-top: max(var(--space-6), env(safe-area-inset-top));
+  padding: var(--space-7) var(--space-5) var(--space-8);
+  padding-top: max(var(--space-7), env(safe-area-inset-top));
 }
 
 .nav-tabs {
@@ -19,24 +19,41 @@
   display: flex;
   border-top: 1px solid var(--rule);
   background: var(--bg);
+  backdrop-filter: blur(8px);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+.nav-tabs__indicator {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 25%;
+  height: 2px;
+  background: var(--accent);
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-tabs__indicator {
+    transition: none;
+  }
+}
+
 .nav-tab {
+  position: relative;
   flex: 1;
   text-align: center;
   padding: var(--space-4) var(--space-2);
   font-size: var(--text-micro);
+  font-weight: var(--weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-55);
+  letter-spacing: 0.07em;
+  color: var(--ink-32);
   text-decoration: none;
-  border-top: 1px solid transparent;
-  margin-top: -1px;
-  transition: color var(--duration-fast) var(--ease);
+  transition: color var(--duration-base) var(--ease);
 }
 
 .nav-tab--active {
   color: var(--ink);
-  border-top-color: var(--ink);
+  font-weight: var(--weight-semibold);
 }

@@ -27,20 +27,20 @@ export function TodayView() {
   const flag = useMemo(() => evaluatePushbackFlags(appData, date), [appData, date])
   const entryByGoal = useMemo(() => new Map(entries.map((e) => [`${e.goalId}|${e.date}`, e])), [entries])
 
-  const formattedDate = new Date(`${date}T00:00:00`).toLocaleDateString(undefined, {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-  })
+  const weekday = new Date(`${date}T00:00:00`).toLocaleDateString(undefined, { weekday: 'long' })
+  const monthDay = new Date(`${date}T00:00:00`).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })
 
   return (
-    <div className="today-view">
-      <h1 className="today-view__date">{formattedDate}</h1>
+    <div className="today-view route-fade">
+      <header className="today-view__header">
+        <h1 className="today-view__weekday">{weekday}</h1>
+        <div className="today-view__monthday tabular">{monthDay}</div>
+      </header>
 
       <div className="goal-list">
         {scheduledGoals.length === 0 && <p className="today-view__empty">Nothing scheduled today.</p>}
         {scheduledGoals.map((goal, i) => (
-          <div key={goal.id}>
+          <div key={goal.id} className="goal-list__item" style={{ animationDelay: `${i * 35}ms` }}>
             {i > 0 && <Rule />}
             <GoalRow goal={goal} entry={entryByGoal.get(`${goal.id}|${date}`)} date={date} />
           </div>

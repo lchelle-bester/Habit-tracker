@@ -7,19 +7,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
   font-size: var(--text-small);
 }
 
 .week-nav button {
   color: var(--ink-70);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  font-weight: var(--weight-medium);
   font-size: var(--text-micro);
+  padding: var(--space-2) var(--space-1);
+  transition: color var(--duration-base) var(--ease), opacity var(--duration-base) var(--ease);
+}
+.week-nav button:hover:not(:disabled) {
+  color: var(--accent);
 }
 .week-nav button:disabled {
-  opacity: 0.3;
+  opacity: 0.25;
   cursor: default;
+}
+
+.week-nav__label {
+  font-weight: var(--weight-semibold);
+  color: var(--ink-80);
 }
 
 .week-row {
@@ -34,12 +45,12 @@
 .week-row--header {
   border-top: none;
   border-bottom: 1px solid var(--rule-strong);
-  padding-bottom: var(--space-2);
+  padding-bottom: var(--space-3);
 }
 
 .week-row__name {
   font-size: var(--text-small);
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   padding-right: var(--space-2);
 }
 
@@ -51,11 +62,10 @@
 }
 
 .week-cell {
-  height: 28px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-body);
 }
 
 .week-cell--header {
@@ -63,29 +73,43 @@
   height: auto;
   font-size: var(--text-micro);
   color: var(--ink-55);
-  gap: 2px;
+  gap: 3px;
+  font-weight: var(--weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  padding-bottom: var(--space-1);
 }
 
 .week-cell--today {
-  color: var(--ink);
-  font-weight: 700;
+  color: var(--accent);
+  font-weight: var(--weight-bold);
 }
 
-.week-cell--pass {
-  color: var(--ink);
-  font-weight: 700;
+.week-mark {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transition: transform var(--duration-base) var(--ease);
 }
 
-.week-cell--fail {
-  color: var(--ink-55);
+.week-mark--pass {
+  background: var(--accent);
 }
 
-.week-cell--pending {
-  color: var(--ink-32);
+.week-mark--fail {
+  width: 5px;
+  height: 5px;
+  background: var(--ink-32);
 }
 
-.week-cell--not_scheduled {
-  color: transparent;
+.week-mark--pending {
+  width: 9px;
+  height: 9px;
+  background: transparent;
+  border: 1.5px solid var(--ink-15);
+}
+
+.week-mark--not_scheduled {
+  background: transparent;
 }

@@ -4,18 +4,12 @@ interface ToggleProps {
   onChange: (checked: boolean) => void
 }
 
-/** Editorial substitute for a checkbox/switch: a tap target that states its own status in words, not a colored pill. */
+/** Editorial substitute for a checkbox/switch: a small filling ring plus a label that states its own status in words. */
 export function Toggle({ label, checked, onChange }: ToggleProps) {
   return (
-    <button
-      type="button"
-      className="ui-toggle"
-      aria-pressed={checked}
-      onClick={() => onChange(!checked)}
-      style={{ opacity: checked ? 1 : 0.55, fontWeight: checked ? 600 : 400 }}
-    >
-      <span className="ui-toggle-mark">{checked ? '—' : '·'}</span>
-      <span>{label}</span>
+    <button type="button" className={`ui-toggle${checked ? ' ui-toggle--on' : ''}`} aria-pressed={checked} onClick={() => onChange(!checked)}>
+      <span className="ui-toggle-ring" />
+      <span className="ui-toggle-label">{label}</span>
     </button>
   )
 }

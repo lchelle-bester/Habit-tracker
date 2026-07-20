@@ -4,10 +4,11 @@
 
 .settings-section__label {
   font-size: var(--text-micro);
+  font-weight: var(--weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--ink-55);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .weekday-picker {
@@ -16,21 +17,31 @@
 }
 
 .weekday-picker__day {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
   color: var(--ink-55);
   font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  transition: transform var(--duration-fast) var(--ease), background-color var(--duration-base) var(--ease), border-color var(--duration-base) var(--ease), color var(--duration-base) var(--ease);
+}
+.weekday-picker__day:hover {
+  border-color: var(--ink-70);
+}
+.weekday-picker__day:active {
+  transform: scale(0.92);
 }
 
 .weekday-picker__day--on {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
 }
 
 .goal-list-item {
-  padding: var(--space-4) 0;
+  padding: var(--space-5) 0;
+  transition: background-color var(--duration-base) var(--ease);
 }
 
 .goal-list-item__row {
@@ -41,8 +52,9 @@
 }
 
 .goal-list-item__name {
-  font-size: var(--text-lg);
-  font-weight: 500;
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.005em;
 }
 
 .goal-list-item__meta {
@@ -58,45 +70,52 @@
 }
 
 .goal-settings-list__archived-label {
-  margin-top: var(--space-6);
+  margin-top: var(--space-7);
   font-size: var(--text-micro);
+  font-weight: var(--weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--ink-32);
 }
 
 .version-history {
-  margin-top: var(--space-3);
-  padding-top: var(--space-2);
-  border-top: 1px dashed var(--rule);
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--surface);
 }
 
 .version-history__label {
   font-size: var(--text-micro);
+  font-weight: var(--weight-semibold);
   color: var(--ink-32);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: var(--space-1);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-2);
 }
 
 .version-history__row {
   display: flex;
   justify-content: space-between;
   font-size: var(--text-small);
-  color: var(--ink-55);
-  padding: 2px 0;
+  color: var(--ink-70);
+  padding: 3px 0;
 }
 
 .goal-form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  padding: var(--space-4) 0;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  margin: var(--space-2) calc(var(--space-2) * -1);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  animation: route-in var(--duration-base) var(--ease) both;
 }
 
 .goal-form__actions {
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-3);
   justify-content: flex-end;
   margin-top: var(--space-2);
 }
@@ -106,14 +125,14 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
-  padding: 2px 0;
+  padding: 3px 0;
   font-size: var(--text-small);
 }
 
 .export-import-panel {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .export-import-panel__row {
@@ -126,10 +145,11 @@
 .export-import-panel__row span {
   font-size: var(--text-small);
   color: var(--ink-70);
+  line-height: 1.4;
 }
 
 .export-import-panel__error {
   font-size: var(--text-small);
-  color: var(--ink);
-  font-weight: 600;
+  color: var(--accent);
+  font-weight: var(--weight-semibold);
 }

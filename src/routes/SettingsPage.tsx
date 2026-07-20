@@ -5,7 +5,7 @@ import '../components/settings/settings.css'
 
 export function SettingsPage() {
   return (
-    <div>
+    <div className="route-fade">
       <h1 className="page-title">Settings</h1>
 
       <div className="settings-section">

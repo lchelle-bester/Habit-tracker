@@ -15,16 +15,49 @@ html {
 }
 
 body {
+  position: relative;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--text-body);
+  font-weight: var(--weight-regular);
   line-height: 1.45;
+  letter-spacing: -0.006em;
   -webkit-font-smoothing: antialiased;
   min-height: 100dvh;
+  transition: background-color var(--duration-slow) var(--ease), color var(--duration-slow) var(--ease);
+}
+
+/* A faint paper grain — texture instead of a dead-flat fill. Fixed + pointer-events:none so it never affects layout or interaction. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    mix-blend-mode: overlay;
+    opacity: 0.7;
+  }
+}
+:root[data-theme='dark'] body::before {
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+}
+:root[data-theme='light'] body::before {
+  mix-blend-mode: multiply;
+  opacity: 0.5;
 }
 
 #root {
+  position: relative;
+  z-index: 1;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -45,6 +78,7 @@ button {
   padding: 0;
   cursor: pointer;
   text-align: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -57,9 +91,9 @@ a {
 
 .page-title {
   font-size: var(--text-xl);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: var(--space-6);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-7);
 }
 
 .visually-hidden {
@@ -77,4 +111,28 @@ a {
 ::selection {
   background: var(--accent);
   color: var(--accent-ink);
+}
+
+/* Applied to each route's root element for a soft settle-in on navigation. */
+@keyframes route-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.route-fade {
+  animation: route-in var(--duration-slow) var(--ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-fade {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -21,7 +21,7 @@ export function PatternsView() {
   )
 
   return (
-    <div className="patterns-view">
+    <div className="patterns-view route-fade">
       <h1 className="page-title">Patterns</h1>
 
       <SleepDeltaOverlayChart />
