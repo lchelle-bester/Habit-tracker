@@ -1,0 +1,85 @@
+:root {
+  /* Light — warm off-white, near-black ink, one restrained accent. */
+  --bg: #f5f2ec;
+  --surface: #efece4;
+  --ink: #1a1712;
+  --ink-70: rgba(26, 23, 18, 0.7);
+  --ink-55: rgba(26, 23, 18, 0.55);
+  --ink-32: rgba(26, 23, 18, 0.32);
+  --rule: rgba(26, 23, 18, 0.15);
+  --rule-strong: rgba(26, 23, 18, 0.28);
+  --accent: #5b6b3f;
+  --accent-ink: #f5f2ec;
+
+  --font-sans: 'Inter Tight Variable', 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --text-micro: 0.75rem;
+  --text-small: 0.875rem;
+  --text-body: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 3.5rem;
+
+  --duration-fast: 100ms;
+  --duration-base: 160ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark — warm dark grey, designed independently, never pure black or a naive invert. */
+    --bg: #1c1a17;
+    --surface: #232019;
+    --ink: #ece7dd;
+    --ink-70: rgba(236, 231, 221, 0.7);
+    --ink-55: rgba(236, 231, 221, 0.55);
+    --ink-32: rgba(236, 231, 221, 0.32);
+    --rule: rgba(236, 231, 221, 0.16);
+    --rule-strong: rgba(236, 231, 221, 0.3);
+    --accent: #c9a24a;
+    --accent-ink: #1c1a17;
+    color-scheme: dark;
+  }
+}
+
+/* Manual override always wins over the OS preference — higher specificity than the bare :root above. */
+:root[data-theme='light'] {
+  --bg: #f5f2ec;
+  --surface: #efece4;
+  --ink: #1a1712;
+  --ink-70: rgba(26, 23, 18, 0.7);
+  --ink-55: rgba(26, 23, 18, 0.55);
+  --ink-32: rgba(26, 23, 18, 0.32);
+  --rule: rgba(26, 23, 18, 0.15);
+  --rule-strong: rgba(26, 23, 18, 0.28);
+  --accent: #5b6b3f;
+  --accent-ink: #f5f2ec;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #1c1a17;
+  --surface: #232019;
+  --ink: #ece7dd;
+  --ink-70: rgba(236, 231, 221, 0.7);
+  --ink-55: rgba(236, 231, 221, 0.55);
+  --ink-32: rgba(236, 231, 221, 0.32);
+  --rule: rgba(236, 231, 221, 0.16);
+  --rule-strong: rgba(236, 231, 221, 0.3);
+  --accent: #c9a24a;
+  --accent-ink: #1c1a17;
+  color-scheme: dark;
+}

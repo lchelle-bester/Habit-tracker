@@ -1,0 +1,131 @@
+.pattern-section {
+  margin-bottom: var(--space-8);
+}
+
+.pattern-section__question {
+  font-size: var(--text-body);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.pattern-section__note {
+  font-size: var(--text-small);
+  color: var(--ink-55);
+  margin-bottom: var(--space-4);
+}
+
+.pattern-section__empty {
+  font-size: var(--text-small);
+  color: var(--ink-32);
+  font-style: italic;
+  padding: var(--space-4) 0;
+}
+
+.line-chart, .bar-chart {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.line-chart__path {
+  stroke: var(--ink-32);
+  stroke-width: 1;
+}
+.line-chart__path--emphasis {
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+.line-chart__zero {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+.line-chart__label {
+  font-size: 7px;
+  fill: var(--ink-55);
+}
+.line-chart__label--emphasis {
+  fill: var(--ink);
+  font-weight: 600;
+}
+.line-chart__axis-label {
+  font-size: 7px;
+  fill: var(--ink-32);
+}
+
+.bar-chart__bar {
+  fill: var(--ink-32);
+}
+.bar-chart__bar--emphasis {
+  fill: var(--accent);
+}
+.bar-chart__baseline {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+.bar-chart__axis-label {
+  font-size: 7px;
+  fill: var(--ink-55);
+  text-anchor: middle;
+}
+.bar-chart__value-label {
+  font-size: 7px;
+  fill: var(--ink-70);
+  text-anchor: middle;
+}
+
+.small-multiples {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.small-multiple__label {
+  font-size: var(--text-small);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.correlation-stat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.correlation-stat__number {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+.correlation-stat__label {
+  font-size: var(--text-small);
+  color: var(--ink-55);
+}
+
+.streak-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.streak-list__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-2) 0;
+}
+
+.streak-list__name {
+  font-size: var(--text-body);
+}
+
+.streak-list__numbers {
+  display: flex;
+  gap: var(--space-5);
+  font-size: var(--text-small);
+  color: var(--ink-70);
+}
+
+.streak-list__numbers b {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--ink);
+  margin-right: var(--space-1);
+}

@@ -1,0 +1,135 @@
+.settings-section {
+  margin-bottom: var(--space-8);
+}
+
+.settings-section__label {
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-55);
+  margin-bottom: var(--space-3);
+}
+
+.weekday-picker {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.weekday-picker__day {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-55);
+  font-size: var(--text-small);
+}
+
+.weekday-picker__day--on {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.goal-list-item {
+  padding: var(--space-4) 0;
+}
+
+.goal-list-item__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.goal-list-item__name {
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.goal-list-item__meta {
+  font-size: var(--text-small);
+  color: var(--ink-55);
+  margin-top: 2px;
+}
+
+.goal-list-item__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.goal-settings-list__archived-label {
+  margin-top: var(--space-6);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-32);
+}
+
+.version-history {
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--rule);
+}
+
+.version-history__label {
+  font-size: var(--text-micro);
+  color: var(--ink-32);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-1);
+}
+
+.version-history__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-small);
+  color: var(--ink-55);
+  padding: 2px 0;
+}
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.goal-form__actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+  margin-top: var(--space-2);
+}
+
+.overrides-grid__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 2px 0;
+  font-size: var(--text-small);
+}
+
+.export-import-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.export-import-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.export-import-panel__row span {
+  font-size: var(--text-small);
+  color: var(--ink-70);
+}
+
+.export-import-panel__error {
+  font-size: var(--text-small);
+  color: var(--ink);
+  font-weight: 600;
+}
