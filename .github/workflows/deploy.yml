@@ -1,15 +1,42 @@
-bmFtZTogRGVwbG95IHRvIEdpdEh1YiBQYWdlcwoKb246CiAgcHVzaDoKICAgIGJyYW5jaGVzOiBb
-bWFpbl0KICB3b3JrZmxvd19kaXNwYXRjaDoKCnBlcm1pc3Npb25zOgogIGNvbnRlbnRzOiByZWFk
-CiAgcGFnZXM6IHdyaXRlCiAgaWQtdG9rZW46IHdyaXRlCgpjb25jdXJyZW5jeToKICBncm91cDog
-cGFnZXMKICBjYW5jZWwtaW4tcHJvZ3Jlc3M6IHRydWUKCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5z
-LW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgICAgLSB1c2VzOiBhY3Rpb25zL2NoZWNr
-b3V0QHY0CiAgICAgIC0gdXNlczogYWN0aW9ucy9zZXR1cC1ub2RlQHY0CiAgICAgICAgd2l0aDoK
-ICAgICAgICAgIG5vZGUtdmVyc2lvbjogMjIKICAgICAgICAgIGNhY2hlOiBucG0KICAgICAgLSBy
-dW46IG5wbSBjaQogICAgICAtIHJ1bjogbnBtIHJ1biB0ZXN0CiAgICAgIC0gcnVuOiBucG0gcnVu
-IGJ1aWxkCiAgICAgIC0gdXNlczogYWN0aW9ucy9jb25maWd1cmUtcGFnZXNAdjUKICAgICAgLSB1
-c2VzOiBhY3Rpb25zL3VwbG9hZC1wYWdlcy1hcnRpZmFjdEB2MwogICAgICAgIHdpdGg6CiAgICAg
-ICAgICBwYXRoOiBkaXN0CgogIGRlcGxveToKICAgIG5lZWRzOiBidWlsZAogICAgcnVucy1vbjog
-dWJ1bnR1LWxhdGVzdAogICAgZW52aXJvbm1lbnQ6CiAgICAgIG5hbWU6IGdpdGh1Yi1wYWdlcwog
-ICAgICB1cmw6ICR7eyBzdGVwcy5kZXBsb3ltZW50Lm91dHB1dHMucGFnZV91cmwgfX0KICAgIHN0
-ZXBzOgogICAgICAtIGlkOiBkZXBsb3ltZW50CiAgICAgICAgdXNlczogYWN0aW9ucy9kZXBsb3kt
-cGFnZXNAdjQK
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
